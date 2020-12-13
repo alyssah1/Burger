@@ -1,5 +1,5 @@
 // Import MySQL connection.
-const connection = require("../config/orm");
+const connection = require("../config/orm.js");
 
 
 

@@ -1,28 +1,78 @@
 const express = require("express");
 
-const router = require("express").Router();
+const router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
 const burger = require("../models/burger.js");
 
+// creating all routes and setting up logic within each route
+router.get("/", function(req, res) {
+    burger.all(function(data){
+        var hbsObject = {
+            burgers: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
+    });
+});
 
+router.post("/api/newBurger", function(req, res) {
+    burger.create([
+     "burger_name", "devoured"   
+    ], [
+        req.body.burger_name, req.body.devoured
+    ], function(data) {
+        res.redirect("/");
+    });
+});
 
+router.put("/api/updateburger/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+    console.log("condition", condition);
 
+    burger.update({
+        devoured: req.body.devoured
+    }, condition, function(data) {
+        if(data.changedRows == 0) {
+            // if no rows changed, then id doesnt exist so send a 404 message
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
 
+router.delete("/api/updateburger/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
 
+    burger.delete(condition, function(data) {
+        if (data.affectedRows == 0) {
+            // if no rows changes, then id must not exist so send a 404 message
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// export routes for server.js to use 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
