@@ -19,6 +19,7 @@
                     {{this.burger_name}}
 
                     <form action="/api/updateburger/{{this.id}}?_method=PUT" method="POST">
+                    {{!-- the devour button doesnt work but this is the code I wrote for it --}}
                         <input type="hidden" name="devoured" value="true">
                         <button class="btn-secondary" type="submit">Devour It!</button>
                     </form>
