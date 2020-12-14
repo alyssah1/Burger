@@ -12,6 +12,7 @@ li {
     margin: 15px;
     background: #ffffff;
     list-style: none;
+    border: 2px red solid;
 }
 
 .label {
@@ -43,7 +44,7 @@ h2{
     padding: 25px;
     margin: 25px;
     background: #ffffff;
-    border: 1px red solid;
+    border: 2px red solid;
 }
 
 .form-group {

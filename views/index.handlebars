@@ -1,49 +1,53 @@
 {{!-- added a jumbotron --}}
-<div class="jumbotron" style="background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX20046919.jpg); background-size: 100% 100%;">
+<div class="jumbotron"
+    style="background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX20046919.jpg); background-size: 100% 100%;">
     <h1 class="text-center">Delicious burgers to eat!</h1>
 </div>
 
-<div class="row">
-    <div class="col-sm-6">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
 
-        <br>
-        <h2>Fresh burgers to eat!</h2>
+            <br>
+            <h2>Fresh burgers to eat!</h2>
 
-        <ul>
+            <ul>
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <li>
+                    {{this.id}}
+                    {{this.burger_name}}
+
+                    <form action="/api/updateburger/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="true">
+                        <button class="btn-secondary" type="submit">Devour It!</button>
+                    </form>
+
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+
+        </div>
+        {{!-- end row --}}
+
+        <div class="col-sm-6">
+
+            <h2>Devoured burgers!</h2>
+
             {{#each burgers}}
-            {{#unless this.devoured}}
+            {{#if this.devoured}}
             <li>
                 {{this.id}}
                 {{this.burger_name}}
 
-                <form action="/api/updateburger/{{this.id}}?_method=PUT" method="POST">
-                    <input type="hidden" name="devoured" value="true">
-                    <button class="btn-secondary" type="submit">Devour It!</button>
-                </form>
-
             </li>
-            {{/unless}}
+            {{/if}}
             {{/each}}
-        </ul>
 
+        </div>
     </div>
 
-    {{!-- end row --}}
-    <div class="col-sm-6">
-
-        <h2>Devoured burgers!</h2>
-
-        {{#each burgers}}
-        {{#if this.devoured}}
-        <li>
-            {{this.id}}
-            {{this.burger_name}}
-
-        </li>
-        {{/if}}
-        {{/each}}
-
-    </div>
     {{!-- end row --}}
 
     <div class="row">
@@ -65,4 +69,5 @@
 
     </div>
     {{!-- end row --}}
+
 </div>
