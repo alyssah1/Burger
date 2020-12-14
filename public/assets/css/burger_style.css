@@ -14,13 +14,38 @@ li {
     list-style: none;
 }
 
+.label {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    align-content: right;
+}
+
 h1{
+    padding: 30px;
+    text-align: center;
+    text-shadow: 1px 1px #ffffff;
+    font-size: 70px;
+}
+
+h2{
+    padding : 30px;
     text-align: center;
     text-shadow: 1px 1px #ffffff;
 }
 
-h1{
-    text-align: center;
-    text-shadow: 1px 1px #ffffff;
+.create-update-form {
+    padding: 25px;
+    margin: 25px;
+    background: #ffffff;
+    border: 1px red solid;
 }
 
+.form-group {
+    margin-bottom: 25px;
+}

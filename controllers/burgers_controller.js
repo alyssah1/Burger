@@ -26,15 +26,15 @@ router.post("/api/newBurger", function (req, res) {
     });
 });
 
-router.put("api/updateburger/:id", function (req, res) {
+router.put("/api/updateburger/:id", function (req, res) {
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
 
     burger.updateOne({
         devoured: req.body.devoured
     }, condition, function () {
-        if (data.changedRows == 0) {
-            // if no rows changed, then id doesnt exist so send a 404 message
+        if (res.changesRows == 0) {
+            // if no rows changed, then id doesnt exist send 404 message
             return res.status(404).end();
         } else {
             res.status(200).end();
