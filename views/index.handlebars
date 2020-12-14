@@ -1,0 +1,68 @@
+{{!-- added a jumbotron --}}
+<div class="jumbotron">
+    <h1 class="text-center">Delicious burgers to eat!</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+
+        <br>
+        <h2>Fresh burgers to eat!</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            <li>
+                {{this.id}}
+                {{this.burger_name}}
+
+                <form action="/api/updateburger/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button class="btn-secondary" type="submit">Devour It!</button>
+                </form>
+
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+
+    </div>
+
+    {{!-- end row --}}
+    <div class="col-sm-6">
+
+        <h2>Devoured burgers!</h2>
+
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <li>
+            {{this.id}}
+            {{this.burger_name}}
+
+        </li>
+        {{/if}}
+        {{/each}}
+
+    </div>
+    {{!-- end row --}}
+
+    <div class="row">
+        <div class="center col-sm-12">
+
+            <h2>Add a Burger!</h2>
+
+            <form class="create-update-form" action="/api/newBurger" method="POST">
+
+                <div class="form-group">
+                    <p>Enter a burger you want to order and submit your order!</p>
+                    <input type="text" name="burger_name">
+                </div>
+
+                <button class="btn-secondary" type="submit">Submit Order</button>
+            </form>
+
+        </div>
+
+    </div>
+    {{!-- end row --}}
+</div>

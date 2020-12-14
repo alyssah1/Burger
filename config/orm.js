@@ -29,7 +29,7 @@ function objectSQL(ob) {
 
 var orm = {
     selectAll: function(tableInput, cb) {
-        var queryString = "SELECT * FROM" + tableInput + ";";
+        var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function(err, result){
             if(err) {
             console.log(err);
@@ -38,7 +38,7 @@ var orm = {
         });
     },
     insertOne: function(table, cols, vals, cb) {
-        var queryString = "INSERT INTO" + table;
+        var queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
@@ -66,7 +66,7 @@ var orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, function(err, reuslt) {
+        connection.query(queryString, function(err, result) {
             if(err) {
                 console.log(err);
             }

@@ -1,0 +1,26 @@
+body {
+    background-color: #fbf789;
+}
+
+.jumbotron {
+    color: red;
+}
+
+
+li {
+    padding: 15px;
+    margin: 15px;
+    background: #ffffff;
+    list-style: none;
+}
+
+h1{
+    text-align: center;
+    text-shadow: 1px 1px #ffffff;
+}
+
+h1{
+    text-align: center;
+    text-shadow: 1px 1px #ffffff;
+}
+
