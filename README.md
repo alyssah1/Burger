@@ -7,7 +7,7 @@ Created a burger logger using MySQL, Node, Express, Handlebars and ORM. This ful
 
 ![Screenshot1](https://github.com/alyssah1/Burger/blob/master/public/assets/img/burger1.png)
 ![Screenshot2](https://github.com/alyssah1/Burger/blob/master/public/assets/img/burger2.png)
-[!Deploy][https://www.herokucdn.com/deploy/button.svg](https://cryptic-citadel-76333.herokuapp.com/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://cryptic-citadel-76333.herokuapp.com/) 
 
 
 
