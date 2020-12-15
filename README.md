@@ -3,7 +3,7 @@
 # Created by Alyssa Hollowell
 
 # Description
-Created a burger logger using MySQL, Node, Express, Handlebars and ORM. This full stack application that allows the user the input their choice of burger which displays on the "fresh burgers to eat" list. It also shows which burgers have been devoured. 
+Created a burger logger using MySQL, Node, Express, Handlebars and ORM. This full stack application allows the user to input their choice of burger which displays on the "fresh burgers to eat" list. It also shows which burgers have been devoured. 
 
 ![Screenshot1](https://github.com/alyssah1/Burger/blob/master/public/assets/img/burger1.png)
 ![Screenshot2](https://github.com/alyssah1/Burger/blob/master/public/assets/img/burger2.png)
